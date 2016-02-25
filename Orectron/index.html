@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet", href='node_modules/bootstrap/dist/css/bootstrap.min.css'>
+</head>
+
+<body class="container">
+  <div class="electron-container">
+    <h3>Remote Object Actions!!1</h3>
+    <button class="btn btn-sm btn-block btn-primary"
+            onclick="doFullScreen()"><span class="glyphicon glyphicon-resize-full"></span> フルスクリーンにする</button>
+    <button class="btn btn-sm btn-block btn-info"
+            onclick="exitFullScreen();"><span class="glyphicon glyphicon-resize-small"></span> フルスクリーンをやめる</button>
+    <button class="btn btn-sm btn-block btn-success"
+            onclick="toggleDevTool();"><span class="glyphicon glyphicon-cog"></span> デベロッパツールを開く</button>
+    <button class="btn btn-sm btn-block btn-warning"
+            onclick="quitApp();"><span class="glyphicon glyphicon-off"></span> アプリを閉じる</button>
+    <button class="btn btn-sm btn-block btn-danger"
+            onclick="showNodeVersion();"><span class="glyphicon glyphicon-heart"></span> システムのバージョン</button>
+  </div>
+</body>
+
+<script>
+  var remote = require('remote'),
+      app    = remote.require('electron').app,
+      myWindow = remote.getCurrentWindow();
+
+  var doFullScreen = function() {
+    myWindow.setFullScreen(true);
+  };
+  var exitFullScreen = function() {
+    myWindow.setFullScreen(false);
+  };
+  var toggleDevTool = function() {
+    myWindow.toggleDevTools();
+  };
+  var quitApp = function() {
+    app.quit();
+  };
+
+  var showNodeVersion = function() {
+    alert('Node: ' + process.versions.node + ' / Electron: ' + process.versions.electron);
+    var exec = remote.require('child_process').exec;
+    exec('ruby --version',
+      function(error, stdout, stderr) { alert('Ruby: ' + stdout); });
+  };
+  
+</script>
+</html>
