@@ -17,6 +17,16 @@
             onclick="quitApp();"><span class="glyphicon glyphicon-off"></span> アプリを閉じる</button>
     <button class="btn btn-sm btn-block btn-danger"
             onclick="showNodeVersion();"><span class="glyphicon glyphicon-heart"></span> システムのバージョン</button>
+
+    <h3>Notifier</h3>
+    <fieldset>
+      <legend>Notification:</legend>
+      <label for="title">Title</label>
+      <input id="title" type="text" placeholder="通知タイトル" />
+      <label for="message">Message</label>
+      <input id="message" type="text" placeholder="メッセージ" />
+      <button id="notifyButton">Submit!</button>
+    </fieldset>
   </div>
 </body>
 
@@ -46,4 +56,6 @@
   };
   
 </script>
+<script src="js/app.js"></script>
+
 </html>
