@@ -4,6 +4,7 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const Menu = require('menu');
+const Tray = require('tray');
 
 app.on('window-all-closed', function() {
   app.quit();
@@ -30,6 +31,17 @@ app.on('ready', function() {
         }
     ]);
     Menu.setApplicationMenu(menu);
+
+    var contextMenu = Menu.buildFromTemplate([
+        { label: 'Item1', type: 'radio' },
+        { label: 'Item2', type: 'radio' },
+        { label: 'Item3', type: 'radio', checked: true },
+        { label: 'Item4', type: 'radio' }
+    ]);
+    var icon = new Tray(__dirname + '/images/udzura.jpg');
+    icon.setToolTip("テスト");
+    icon.setContextMenu(contextMenu);
+
 
     mainWindow.loadURL('file://' + __dirname + '/index.html');
     //mainWindow.webContents.openDevTools();

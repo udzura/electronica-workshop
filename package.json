@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/udzura/electronica-workshop/issues"
   },
-  "homepage": "https://github.com/udzura/electronica-workshop#readme"
+  "homepage": "https://github.com/udzura/electronica-workshop#readme",
+  "devDependencies": {
+    "electronica": "^0.3.0"
+  }
 }
