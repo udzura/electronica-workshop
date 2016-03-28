@@ -1,0 +1,20 @@
+{
+  "name": "ReactLesson",
+  "version": "0.1.0",
+  "description": "React yaruzo",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Uchio KONDO <udzura@udzura.jp> (http://udzura.jp/)",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^5.8.23",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "marked": "^0.3.5",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}
